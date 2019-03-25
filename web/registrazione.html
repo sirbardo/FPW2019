@@ -12,20 +12,33 @@ and open the template in the editor.
         <meta name="author" content="Laerte Frongia">
         <meta name="keywords" content="FPW, Progetto, HTML, CSS, Java">
         <meta name="description" content="Pagina di registrazione delle esercitazioni di FPW">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 	</head>
     <body>
-        <div>
-            <h1>Writing is easy! <a href="index.html">Or go back</a></h1>
-        </div>
-        <div>
+        <header>
+            <h1>Writing is easy! </h1>
+            <div id="logo">
+                <img title="Main Image" alt="Penna che scrive su un foglio" src="img/homepage.jpg">
+            </div>
+        </header>
+        <nav>
+            <h2 class="importante">Lista pagine</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://google.com">Ti sei perso?</a></li>
+                <li><a href="articoli.html">Articoli</a></li>
+                <li><a href="registrazione.html">Registrazione</a></li>
+            </ul>
+        </nav>
+        <main>
             <form action="index.html" method="post">
                 
-                <label for="id_nomeutente">Nome: </label>
+                <label class="importante" for="id_nomeutente">Nome: </label>
                 <input type="text" name="nomeUtente" id="id_nomeutente" value="Mario Rossi"/>
                 
                 <br/>
                 
-                <label for="id_userame">Username: </label>
+                <label for="id_username">Username: </label>
                 <input type="text" name="userName" id="id_username" value="username"/>
                 
                 <br/> 
@@ -34,8 +47,40 @@ and open the template in the editor.
                 <input type="password" name="password" id="id_password" value="oscurato"/>
                 <br/>
 
+                <label for="scrittore">Scrittore: </label>
+                <input type="radio" name="tipo_utente" id="scrittore" value="scrittore">
+                
+                <br/>
+                
+                <label for="autore">Autore: </label>
+                <input type="radio" name="tipo_utente" id="autore" value="autore">
+                
+                <p class="importante">Colore preferito</p>
+                <select size="5" multiple>
+                    <option value="red">Rosso</option>
+                    <option value="white">Bianco</option>
+                    <option value="grey">Grigio</option>
+                    <option value="yellow">Giallo</option>
+                    <option value="green">Verde</option>
+                </select>
+                <br/>
                 <input type="submit" value="Submit"/>
             </form>
-        </div>
+
+            <div id="content">
+                <div>
+                    <h2>Prova_interna</h2>    
+                </div>
+                
+                <h2>Prova1</h2>
+                <h2>Prova2</h2>
+                <h2>Prova3</h2>
+                <h2>Prova4</h2>
+                <h2>Prova5</h2>
+            </div>
+        </main>
+        <footer>
+            <p>Developed by Laerte Frongia</p>
+        </footer>
     </body>
 </html>
