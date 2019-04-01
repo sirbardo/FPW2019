@@ -53,6 +53,13 @@ ol {
 
 /* Layout */
 
+header {
+    border-width: medium;
+    border-style: solid;
+}
+
+
+
 #logodiv{
     position: relative;
     height: 150px;
@@ -65,4 +72,28 @@ ol {
 #logotitle {
     position: absolute;
     display: inline;
+}
+
+nav ul li{
+   border-style: solid;
+   border-radius: 20px;
+   list-style: none; 
+   padding:14px;
+   float: right;
+}
+
+nav ul li:first-child {
+   width: 30%;
+}
+
+nav ul {
+    margin: 0px;
+    position: relative;
+}
+
+nav{
+    border-style: solid;
+    border-width: medium;
+    float: left;
+    width: 100%;
 }
