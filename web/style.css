@@ -8,28 +8,61 @@ and open the template in the editor.
     Author     : bardoz
 */
 
+*{
+    box-sizing:border-box;
+    border-color: steelblue;
+}
+
+/* Style */
+
 body {
-   font-size: 14px; 
    font-family: "Open Sans", Arial, sans-serif;
-   color: black;
+   background: #333333;
+   color: white;
 }
 
-#logo {
-    background-color: #1c345a;    
+h1, h2, h3{
+    color: #35E0B1;
 }
 
-header, footer {
+input {
+    background: teal;
     color: white;
 }
 
-.importante {
-   font-weight: bold; 
+input:focus {
+    color: whitesmoke;
+    background: salmon;
 }
 
-div#content > h2{
-   color: #9e1616; 
+a:visited {
+    color: red;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: #1c345a;
+a:link {
+    color:white;
+}
+
+a:active{
+    color:blueviolet;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+/* Layout */
+
+#logodiv{
+    position: relative;
+    height: 150px;
+}
+
+.logoimg {
+    height:100%;
+}
+
+#logotitle {
+    position: absolute;
+    display: inline;
 }
