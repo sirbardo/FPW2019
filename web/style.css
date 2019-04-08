@@ -97,3 +97,36 @@ nav{
     float: left;
     width: 100%;
 }
+
+#main_content::after{
+   clear:both;
+   content:"";
+   display:table;
+}
+
+#main_content{
+    border-style: solid;
+    border-width: medium;
+}
+
+aside{
+    float:left;
+    width:20%;
+}
+
+main{
+    float:left;
+    width:80%;
+    border-style:solid;
+    border-width:medium;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+footer{
+    float:left;
+    clear:both;
+    width:100%;
+    text-align:center;
+}
