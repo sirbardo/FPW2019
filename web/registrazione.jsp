@@ -1,3 +1,11 @@
+<%-- 
+    Document   : registrazione
+    Created on : Apr 15, 2019, 9:01:02 AM
+    Author     : bardoz
+--%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -15,20 +23,12 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
-        <header>
-            <div id="logodiv">
-                <img class="logoimg" title="Main Image" alt="Penna che scrive su un foglio" src="img/homepage.jpg">
-                <h1 id="logotitle">Writing is easy! </h1>
-            </div>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="https://google.com">Ti sei perso?</a></li>
-                <li><a href="articoli.html">Articoli</a></li>
-                <li><a href="registrazione.html">Registrazione</a></li>
-            </ul>
-        </nav>
+
+        <!-- Include header here -->
+        <jsp:include page="header.jsp"/>
+
+        <!-- Include navbar here -->
+        <jsp:include page="nav.jsp"/>
 
         <div id="main_content">
             <aside>
@@ -43,7 +43,13 @@ and open the template in the editor.
             </aside>
 
             <main>
-                <form action="index.html" method="post">
+                <form action="registrazione" method="post">
+
+                    <c:if test="${param[\"userName\"] != null}">
+
+                        <p>Lo username inserito è ${param["userName"]}</p>
+
+                    </c:if>
 
                     <label class="importante" for="id_nomeutente">Nome: </label>
                     <input type="text" name="nomeUtente" id="id_nomeutente" value="Mario Rossi"/>
@@ -86,3 +92,4 @@ and open the template in the editor.
         </footer>
     </body>
 </html>
+

@@ -15,7 +15,7 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>
-           registrazione.html 
+           registrazione 
         </welcome-file>
     </welcome-file-list>
 </web-app>
