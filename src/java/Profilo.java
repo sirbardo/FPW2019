@@ -5,17 +5,17 @@
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author bardoz
  */
-public class registrazione extends HttpServlet {
+public class Profilo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,25 +29,8 @@ public class registrazione extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
 
-
-        String username = (String) request.getParameter("userName");
-
-        if (session.getAttribute("loggedIn") != null){
-            request.getRequestDispatcher("Profilo").forward(request, response);
-        }
-        else if (username != null) {
-            System.out.println(username);
-            if (username.equals("admin")) {
-                session.setAttribute("loggedIn", true);
-                request.getRequestDispatcher("Profilo").forward(request, response);
-            } else {
-                request.getRequestDispatcher("registrazione.jsp").forward(request, response);
-            }
-        } else {
-            request.getRequestDispatcher("registrazione.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("profilo_utente.jsp").forward(request, response);
 
     }
 

@@ -4,9 +4,17 @@
         <servlet-name>registrazione</servlet-name>
         <servlet-class>registrazione</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Profilo</servlet-name>
+        <servlet-class>Profilo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrazione</servlet-name>
         <url-pattern>/registrazione</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profilo</servlet-name>
+        <url-pattern>/Profilo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
