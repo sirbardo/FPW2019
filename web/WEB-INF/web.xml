@@ -23,7 +23,7 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>
-           registrazione 
+           login.html
         </welcome-file>
     </welcome-file-list>
 </web-app>
