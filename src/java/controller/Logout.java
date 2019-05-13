@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author bardoz
+ * @author davide
  */
-public class Profilo extends HttpServlet {
+@WebServlet(name = "Logout", urlPatterns = {"/logout.html"})
+public class Logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,9 +33,14 @@ public class Profilo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        request.getRequestDispatcher("profilo_utente.jsp").forward(request, response);
-
+        HttpSession sessione = request.getSession();
+        if(request.getParameter("logout") != null){
+            sessione.invalidate();
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }else{
+            response.sendRedirect("login.html");
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -3,19 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import model.Libro;
+import model.LibroFactory;
 
 /**
  *
- * @author bardoz
+ * @author davide
  */
-public class registrazione extends HttpServlet {
+@WebServlet(name = "ModificaLibro", urlPatterns = {"/modificaLibro.html"})
+public class ModificaLibro extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,26 +34,25 @@ public class registrazione extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-
-
-        String username = (String) request.getParameter("userName");
-
-        if (session.getAttribute("loggedIn") != null){
-            request.getRequestDispatcher("Profilo").forward(request, response);
-        }
-        else if (username != null) {
-            System.out.println(username);
-            if (username.equals("admin")) {
-                session.setAttribute("loggedIn", true);
-                request.getRequestDispatcher("Profilo").forward(request, response);
-            } else {
-                request.getRequestDispatcher("registrazione.jsp").forward(request, response);
+        if(request.getParameter("lid") == null){
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }else{
+            int lid = Integer.parseInt(request.getParameter("lid"));
+            Libro l = LibroFactory.getInstance().getLibroId(lid);
+            
+            if(request.getParameter("modifica") != null){
+               String titolo = request.getParameter("titolo");
+               String testo = request.getParameter("testo");
+               
+               l.setTitolo(titolo);
+               l.setTesto(testo);
             }
-        } else {
-            request.getRequestDispatcher("registrazione.jsp").forward(request, response);
+            
+            request.setAttribute("libro", l);
+            
+            request.getRequestDispatcher("modificaLibro.jsp")
+                    .forward(request, response);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

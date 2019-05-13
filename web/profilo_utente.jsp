@@ -33,17 +33,23 @@ and open the template in the editor.
             <aside>
                 <div>
                     <ol>
-                        <li>Articolo 1</li>
-                        <li>Articolo 2</li>
-                        <li>Articolo 3</li>
-                        <li>Articolo 4</li>
+                        <c:forEach items="${libri}" var="libro">
+                            <li>
+                                <a href="modificaLibro.html?lid=${libro.getId()}">
+                                    ${libro.getTitolo()}
+                                </a>
+                            </li>
+                        </c:forEach>
                     </ol> 
                 </div> 
+                <div>
+                    <a href="logout.html?logout=true">Logout</a>
+                </div>
             </aside>
 
             <main>
                 <p>
-                    Benvenuto, ${param["userName"]}!
+                    Benvenuto, ${autore.getNome()} ${autore.getCognome()}!
                 </p>
             </main>
 
