@@ -26,12 +26,17 @@ and open the template in the editor.
         <!-- Include header here -->
         <jsp:include page="header.jsp"/>
 
+        <script src="js/search.js"></script>
+
         <!-- Include navbar here -->
         <jsp:include page="nav.jsp"/>
 
         <div id="main_content">
             <aside>
-                <div>
+                <div id="div-search">
+                    <input type="text" id="search" name="search" value="Cerca articoli"> 
+                </div>
+                <div id="div-libri">
                     <ol>
                         <c:forEach items="${libri}" var="libro">
                             <li>

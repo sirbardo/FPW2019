@@ -16,6 +16,14 @@
         <servlet-name>Profilo</servlet-name>
         <url-pattern>/Profilo</url-pattern>
     </servlet-mapping>-->
+    <servlet>
+        <servlet-name>SearchAJAX</servlet-name>
+        <servlet-class>controller.SearchAJAX</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchAJAX</servlet-name>
+        <url-pattern>/SearchAJAX</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

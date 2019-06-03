@@ -10,4 +10,5 @@
         <img class="logoimg" title="Main Image" alt="Penna che scrive su un foglio" src="img/homepage.jpg">
         <h1 id="logotitle">Writing is easy! </h1>
     </div>
+    <script src="js/jquery-3.4.1.min.js"></script> 
 </header>

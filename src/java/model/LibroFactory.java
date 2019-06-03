@@ -72,6 +72,19 @@ public class LibroFactory {
         return libriAutore;
     }
     
+
+    public List<Libro> searchLibri(String toSearch){
+        
+        List <Libro> listToReturn = new ArrayList<>();
+
+        for (Libro libro : getLibri()){
+            if (libro.getTitolo().contains(toSearch))
+                listToReturn.add(libro);
+        }
+
+        return listToReturn;
+    }
+
     public Libro getLibroId(int id){
         List<Libro> tuttiLibri = this.getLibri();
         for(Libro l : tuttiLibri){
